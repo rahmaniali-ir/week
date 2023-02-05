@@ -13,7 +13,7 @@ export class ActivityListComponent {
   groupColor = '';
 
   constructor(private activity: ActivityService, private modal: ModalService) {
-    this.activity.fetchGroups();
+    this.activity.fetchGroups().subscribe();
   }
 
   get groups() {

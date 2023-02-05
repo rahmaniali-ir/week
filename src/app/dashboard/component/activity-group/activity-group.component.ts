@@ -12,10 +12,22 @@ export class ActivityGroupComponent {
     id: '',
     name: '',
     color: '',
+    activities: [],
   };
+
+  activityName = '';
+
   constructor(private activity: ActivityService) {}
 
   deleteGroup() {
     this.activity.deleteGroup(this.group.id);
+  }
+
+  addActivity() {
+    this.activity.createActivity(this.activityName).subscribe({
+      next: () => {
+        this.activityName = '';
+      },
+    });
   }
 }

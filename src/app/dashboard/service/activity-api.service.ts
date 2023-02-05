@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from 'src/app/core/service/api.service';
-import { ActivityGroup } from '../type/activity';
+import { Activity, ActivityGroup } from '../type/activity';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,7 @@ import { ActivityGroup } from '../type/activity';
 export class ActivityApiService {
   constructor(private api: ApiService) {}
 
+  // activity group
   fetchGroups() {
     return this.api.get<ActivityGroup[]>('groups');
   }
@@ -18,5 +19,10 @@ export class ActivityApiService {
 
   deleteGroup(id: string) {
     return this.api.delete('group', { params: { id } });
+  }
+
+  // activity
+  createActivity(name: string) {
+    return this.api.post<Activity>('activity', { name });
   }
 }

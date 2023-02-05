@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { PageHeaderComponent } from './component/page-header/page-header.component';
 import { WeekDayComponent } from './component/week-day/week-day.component';
 import { AddActivityGroupModalComponent } from './component/add-activity-group-modal/add-activity-group-modal.component';
+import { ActivityItemComponent } from './component/activity-item/activity-item.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddActivityGroupModalComponent } from './component/add-activity-group-m
     PageHeaderComponent,
     WeekDayComponent,
     AddActivityGroupModalComponent,
+    ActivityItemComponent,
   ],
   imports: [
     RouterModule,

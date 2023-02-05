@@ -7,10 +7,24 @@
   </button>
 </header>
 
-<main></main>
+<main>
+  <activity-item
+    *ngFor="let activity of group.activities"
+    [activity]="activity"
+  ></activity-item>
+
+  <message-box
+    *ngIf="!group.activities.length"
+    icon="plus"
+    message="Add Activity Dude!"
+  ></message-box>
+</main>
 
 <footer>
-  <button>
-    <span>Add Activity</span>
-  </button>
+  <input
+    [(ngModel)]="activityName"
+    (keyup.enter)="addActivity()"
+    type="text"
+    placeholder="New Activity"
+  />
 </footer>

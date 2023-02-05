@@ -1,10 +1,14 @@
 
 input[type="text"]
   background: var(--background-accent)
+  border: none
   border: 1px solid var(--background-border)
   border-radius: var(--radius)
   color: inherit
   font-family: inherit
   font-size: 1em
   outline: none
-  padding: 16px
+  padding: 10px 14px
+
+  &::placeholder
+    color: var(--fore-secondary)
