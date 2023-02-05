@@ -1,5 +1,5 @@
 export const standardColors: string[] = [
-  '#f8371b',
+  '#fe5c18',
   '#f87c1b',
   '#fac81c',
   '#42cfb4',
