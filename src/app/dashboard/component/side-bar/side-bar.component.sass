@@ -40,20 +40,22 @@ expandable-button
 
 header
   color: var(--fore)
-  text-align: center
-  margin-bottom: 16px
+  margin-bottom: 8px
 
-  &:hover h1
-    transform: scale(1.2)
+  &:hover, &.hovered
+    h1
+      transform: scale(1.2)
+
+      span:nth-child(3)
+        transform: rotateY(0)
 
   h1
     margin: 0
     padding: 16px 0
+    padding-inline-start: 8px
     perspective: 50px
+    transform-origin: left
     transition: all .3s ease-in-out
-
-    &:hover span:nth-child(3)
-      transform: rotateY(0)
 
     span
       transition: color .5s ease
