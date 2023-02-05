@@ -1,0 +1,38 @@
+<header>
+  <div
+    *ngFor="let color of standardColors"
+    [style.color]="color"
+    [class.selected]="color === _value"
+    (click)="selectStandardColor(color)"
+    (keyup.enter)="selectStandardColor(color)"
+    (keyup.space)="selectStandardColor(color)"
+    class="color"
+    tabindex="0"
+  >
+    <svg-icon name="check"></svg-icon>
+  </div>
+
+  <div
+    [class.selected]="isCustomColor"
+    (click)="toggleCustomColor()"
+    (keyup.enter)="toggleCustomColor()"
+    (keyup.space)="toggleCustomColor()"
+    tabindex="0"
+    class="color custom"
+  >
+    <svg-icon name="check"></svg-icon>
+  </div>
+</header>
+
+<main
+  *ngIf="showCustomColor"
+  (mousedown)="onStartCustomColorSelect($event)"
+  (mouseup)="onCustomColorClick($event)"
+>
+  <div class="custom-color-range">
+    <div
+      [style.left]="customColorIndicatorOffsetPercent + '%'"
+      class="indicator"
+    ></div>
+  </div>
+</main>

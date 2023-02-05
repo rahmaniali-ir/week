@@ -1,0 +1,91 @@
+
+@keyframes indicator
+  100%
+    scale: 1 1
+    opacity: 1
+
+:host
+  --size: 20px
+  --gap: 4px
+  --justify: none
+
+  display: inline-flex
+  flex-direction: column
+
+  header
+    display: flex
+    justify-content: var(--justify)
+      
+    .color
+      background: currentColor
+      border-radius: 50%
+      cursor: pointer
+      display: block
+      height: var(--size)
+      position: relative
+      width: var(--size)
+
+      &:hover, &:focus
+        scale: 1.2
+
+      &.selected
+        scale: 1.2
+        
+        &::after
+          opacity: .5
+
+        svg-icon
+          opacity: 1
+          translate: -50% -50%
+
+      + .color
+        margin-inline-start: var(--gap)
+
+      &.custom
+        background: conic-gradient(red, yellow, green, blue, red)
+
+      &::after
+        border: solid 2px var(--background-accent)
+        border-radius: inherit
+        content: ''
+        inset: 0
+        opacity: 0
+        position: absolute
+
+      svg-icon
+        color: var(--background-accent)
+        left: 50%
+        opacity: 0
+        position: absolute
+        top: 50%
+        translate: -50% -40%
+        transition: all .3s ease
+
+  main
+    --indicator-size: calc(var(--size) / 2)
+
+    align-items: center
+    animation: indicator .3s ease forwards
+    background: linear-gradient(to right, hsl(0 100% 50%), hsl(45deg 100% 50%), hsl(90deg 100% 50%), hsl(135deg 100% 50%), hsl(180deg 100% 50%), hsl(225deg 100% 50%), hsl(270deg 100% 50%), hsl(315deg 100% 50%), hsl(360deg 100% 50%))
+    border-radius: var(--size)
+    cursor: pointer
+    display: flex
+    height: var(--indicator-size)
+    margin-top: var(--gap)
+    opacity: 0
+    padding: 0 5px
+    scale: 1 0
+
+    .custom-color-range
+      flex: 1
+      position: relative
+
+    .indicator
+      border: 3px solid var(--background-accent)
+      border-radius: 50%
+      height: var(--indicator-size)
+      pointer-events: none
+      position: absolute
+      top: 50%
+      translate: -50% -50%
+      width: var(--indicator-size)

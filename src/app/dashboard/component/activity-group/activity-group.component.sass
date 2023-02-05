@@ -1,0 +1,37 @@
+
+:host
+  background: var(--background)
+  border-radius: var(--radius)
+  display: flex
+  flex-direction: column
+  padding: 16px
+  position: relative
+
+button
+  background: var(--background-accent)
+
+svg-icon
+  font-size: 1.2em
+
+header
+  align-items: center
+  display: flex
+
+  > svg-icon
+    margin-inline-end: 8px
+
+  > button
+    margin-inline-start: auto
+    opacity: 0
+    transition: all .3s ease
+
+:host:hover header > button
+  opacity: 1
+
+main, footer
+  margin-top: 16px
+
+footer
+  position: sticky
+  top: 100%
+

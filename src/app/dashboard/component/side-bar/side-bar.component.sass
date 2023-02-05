@@ -1,0 +1,73 @@
+
+$margin: 8px
+
+button
+  background: white
+  border: solid 2px transparent
+  color: var(--fore-secondary)
+  transition: all .3s ease
+  width: 100%
+
+  &:hover
+    color: var(--fore)
+
+  &.active
+    color: var(--primary)
+    border-color: var(--primary)
+
+    &:hover svg-icon
+      color: var(--primary)
+
+  &:not(:first-child)
+    margin-top: $margin
+
+  svg-icon
+    font-size: 1.2em
+
+expandable-button
+  margin-top: $margin
+
+:host
+  display: flex
+  flex-direction: column
+  height: 100vh
+  overflow-y: auto
+  padding: 16px
+  width: clamp(180px, 16vw, 200px)
+
+  &::-webkit-scrollbar
+    display: none
+
+header
+  color: var(--fore)
+  text-align: center
+  margin-bottom: 16px
+
+  &:hover h1
+    transform: scale(1.2)
+
+  h1
+    margin: 0
+    padding: 16px 0
+    perspective: 50px
+    transition: all .3s ease-in-out
+
+    &:hover span:nth-child(3)
+      transform: rotateY(0)
+
+    span
+      transition: color .5s ease
+
+      &:hover
+        color: var(--fore-secondary)
+
+      &:nth-child(3)
+        color: var(--primary)
+        display: inline-block
+        transform: rotateY(-180deg)
+        transform-style: preserve-3d
+        transition: transform 1s ease
+
+main
+  flex: 1
+  margin-bottom: $margin

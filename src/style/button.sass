@@ -1,0 +1,26 @@
+
+button
+  align-items: center
+  border: none
+  border-radius: 8px
+  cursor: pointer
+  display: inline-flex
+  padding: 8px
+
+  &:hover
+    svg-icon
+      scale: 1.2
+
+  svg-icon:first-child
+    margin-inline-end: 8px
+
+  svg-icon:last-child
+    margin-inline-start: 8px
+
+  svg-icon:only-child
+    margin: 0
+
+  &.primary
+    background: var(--primary)
+    color: var(--background-accent)
+

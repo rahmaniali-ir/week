@@ -1,0 +1,16 @@
+<header>
+  <svg-icon [style.color]="group.color" name="package"></svg-icon>
+  <strong>{{ group.name }}</strong>
+
+  <button (click)="deleteGroup()" title="Delete" class="danger">
+    <svg-icon name="trash"></svg-icon>
+  </button>
+</header>
+
+<main></main>
+
+<footer>
+  <button>
+    <span>Add Activity</span>
+  </button>
+</footer>

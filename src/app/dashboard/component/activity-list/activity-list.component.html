@@ -1,0 +1,10 @@
+<page-header icon="archive" [header]="'Activities - ' + groupCount">
+  <button (click)="addGroup()" class="primary">
+    <svg-icon name="plus"></svg-icon>
+    <span>Add Activity Group</span>
+  </button>
+</page-header>
+
+<main>
+  <activity-group *ngFor="let group of groups" [group]="group"></activity-group>
+</main>

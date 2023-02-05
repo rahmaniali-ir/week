@@ -1,0 +1,83 @@
+<header>
+  <h1>
+    <span>W</span>
+    <span>E</span>
+    <span>E</span>
+    <span>K</span>
+  </h1>
+</header>
+
+<main>
+  <button routerLink="/today" routerLinkActive="active">
+    <svg-icon name="diary"></svg-icon>
+    <span>Today</span>
+  </button>
+
+  <button routerLink="/activities" routerLinkActive="active">
+    <svg-icon name="archive"></svg-icon>
+    <span>Activities</span>
+  </button>
+
+  <expandable-button>
+    <button header>
+      <svg-icon name="calendar"></svg-icon>
+      <span>Weekdays</span>
+    </button>
+
+    <button
+      *ngFor="let weekday of weekdays"
+      [routerLink]="'/weekday/' + weekday.data?.route"
+      routerLinkActive="active"
+    >
+      <svg-icon name="sun"></svg-icon>
+      <span>{{ weekday.body }}</span>
+    </button>
+  </expandable-button>
+
+  <button>
+    <svg-icon name="presentation"></svg-icon>
+    <span>Table</span>
+  </button>
+
+  <button>
+    <svg-icon name="chart"></svg-icon>
+    <span>Statistics</span>
+  </button>
+
+  <button>
+    <svg-icon name="history"></svg-icon>
+    <span>History</span>
+  </button>
+
+  <button>
+    <svg-icon name="export"></svg-icon>
+    <span>Export</span>
+  </button>
+
+  <button>
+    <svg-icon name="upCircle" class="success"></svg-icon>
+    <span>Upgrade</span>
+  </button>
+</main>
+
+<footer>
+  <button>
+    <svg-icon name="pallet"></svg-icon>
+    <span>Preferences</span>
+  </button>
+
+  <button>
+    <svg-icon name="umbrella"></svg-icon>
+    <span>Support</span>
+  </button>
+
+  <button>
+    <svg-icon name="user"></svg-icon>
+    <span>Profile</span>
+  </button>
+
+  <button>
+    <svg-icon name="logOut"></svg-icon>
+    <span>Log Out</span>
+  </button>
+</footer>

@@ -1,0 +1,7 @@
+<header (click)="toggle()">
+  <ng-content select="[header]"></ng-content>
+</header>
+
+<main *ngIf="open">
+  <ng-content></ng-content>
+</main>

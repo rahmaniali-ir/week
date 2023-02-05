@@ -1,0 +1,15 @@
+<modal-card
+  [modal]="modal.modalRef || undefined"
+  [iconColor]="color"
+  icon="sun"
+  header="Add Activity Group"
+>
+  <input [(ngModel)]="name" type="text" placeholder="Activity Group Name" />
+
+  <color-picker [(value)]="color"></color-picker>
+
+  <button footer (click)="addGroup()" class="primary">
+    <svg-icon name="filePlus"></svg-icon>
+    <span>Add Activity Group</span>
+  </button>
+</modal-card>
